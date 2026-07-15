@@ -4,11 +4,12 @@ name: hello world
 
 # Controls when the workflow will run
 on: 
- push:
-   branches:
-     - main
- schedule:
-   - cron: */5
+   workflow_dispatch: 
+ # push:
+ #   branches:
+ #     - main
+ # schedule:
+ #   - cron: */5
   # Triggers the workflow on push or pull request events but only for the "main" branch
   
 
