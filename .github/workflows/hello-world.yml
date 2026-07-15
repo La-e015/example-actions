@@ -4,14 +4,7 @@ name: hello world
 
 # Controls when the workflow will run
 on: 
-   workflow_dispatch: 
- # push:
- #   branches:
- #     - main
- # schedule:
- #   - cron: */5
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  
+  workflow_dispatch: 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -23,6 +16,14 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout
+        uses: actions/checkout@v7.0.0
+
+      - name: List the files of the repo
+        run: |
+            echo The repository {{ github.repository }}
+            contains the following files: "
+            tree
 
       # Runs a single command using the runners shell
       - name: Display hello world message
@@ -30,4 +31,4 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Another Task
-        run: echo another task
+        run: echo another task display fixed code and don't change anything please
