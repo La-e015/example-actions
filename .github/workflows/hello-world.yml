@@ -21,9 +21,8 @@ jobs:
 
       - name: List the files of the repo
         run: |
-            echo The repository {{ github.repository }}
-            contains the following files: "
-            tree
+          echo "The repository ${{ github.repository }} contains the following files:"
+          find . -maxdepth 3 -not -path '*/.*'
 
       # Runs a single command using the runners shell
       - name: Display hello world message
